@@ -47,7 +47,10 @@ export const PopupTable = () => {
   };
 
   const inputValueHandler = e => {
-    if (e.target.value < 0) return toast('Value cannot be less than zero');
+    if (e.target.value < 0) {
+      setInputValue(0);
+      return toast('Value cannot be less than zero');
+    }
     setInputValue(e.target.value);
   };
 
