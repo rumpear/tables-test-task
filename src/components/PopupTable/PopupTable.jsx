@@ -31,7 +31,7 @@ export const PopupTable = () => {
   const [inputComment, setInputComment] = useState('');
 
   const addButtonHandler = () => {
-    if (!inputValue) return toast('Please fill in the required fields');
+    if (!inputValue) return toast('Please fill in the required field');
 
     setPopupTableData(s => [
       ...s,
@@ -47,9 +47,9 @@ export const PopupTable = () => {
   };
 
   const inputValueHandler = e => {
-    if (e.target.value < 0) {
-      setInputValue(0);
-      return toast('Value cannot be less than zero');
+    if (e.target.value < 1) {
+      setInputValue(1);
+      return toast('Value cannot be less than one');
     }
     setInputValue(e.target.value);
   };
